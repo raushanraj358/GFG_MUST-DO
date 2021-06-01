@@ -1,15 +1,34 @@
-#include<iostream>
-using namespace std;
-int compute(int n)
+// { Driver Code Starts
+#include<bits/stdc++.h> 
+using namespace std; 
+
+ // } Driver Code Ends
+//User function Template for C++
+class Solution
 {
-	int ans = 0;
+public:
+    int trailingZeroes(int n)
+    {
+        int ans = 0;
 	for(int d =5; n / d >= 1; d *= 5){
 		ans += n/d;
 	}
 	return ans;
-}
-int main(){
-	int n;
-	cin >> n;
-	cout << compute(n);
-}
+    }
+};
+
+// { Driver Code Starts.
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int N;
+        cin >> N;
+        Solution ob;
+        int ans  = ob.trailingZeroes(N);
+        cout<<ans<<endl;
+    }
+    return 0;
+}  // } Driver Code Ends
